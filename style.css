@@ -1,33 +1,55 @@
-
 .outer {
   display : flex;
   align-items : center;
   justify-content: center;
 }
-
 .col-centered{
     float: none;
     margin: 0 auto;
 }
-
-.vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
+/*Responsive Image for NavBar*/
+.img-responsive {
+  height: auto;
+  width: auto;
+  max-height: 72px;
+  max-width: 250px;
 }
 
-#welcome{
-height: 100%;
+ul{
+  list-style-type:none;
+  }
 
+  li{
+    list-style-type:none;
+    }
+
+#background-main
+{
+  width: 100%;
+  z-index: 0;
 }
 
-
-#jumbo{
-  padding: 5px;
+.take-all-space-you-can{
+  width:100%;
 }
 
-#button-primary{
-  padding: 5px;
+.container-1 {
+  position: relative;
+  width: 100%; /* Maximum width */
+  margin: 0 auto; /* Center it */
+}
 
+.container-1 .content-1 {
+  position: absolute; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  width: 100%; /* Full width */
+  padding: 20px; /* Some padding */
+}
 
+.icons {
+  width: 48px !important;
+  height: 48px !important;
 }
