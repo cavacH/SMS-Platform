@@ -50,6 +50,67 @@ ul{
 }
 
 .icons {
-  width: 48px !important;
-  height: 48px !important;
+  width: 125px !important;
+  height: 125px !important;
+  padding: 10px !important;
+}
+
+body {
+  font-family: 'Roboto' !important;
+}
+
+.outer-container {
+  position: relative;
+  background-color: #0b72bd; 
+}
+#particles-js {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #0b72bd; /* could go on .outer-container as well */
+}
+.outer-container .your-content {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+.white-h1 {
+  color: white;
+  background-color: transparent;
+}
+.btn-1 {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 16px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn-2 {
+  border: 2px solid #2196F3;
+  background-color: #2196F3;
+  color: white;
+  border-radius: 10px;
+  padding: 16px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.info {
+  border-color: #2196F3;
+  color: dodgerblue
+}
+.info:hover {
+  background: #2196F3;
+  color: white;
+}
+.eighty-width{
+  max-width: 80%;
+  margin: auto;
+}
+
+
+.graphs{
+  width:75%;
+  height:auto;
 }
