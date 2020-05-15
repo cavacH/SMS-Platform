@@ -24,17 +24,20 @@ public class SmsApp {
             //convert information
             String result = req.body();
             Information information = test.convert(result,Information.class);
-            System.out.println(information.Body);
+            //System.out.println(information.Body);
             List<Pair<String, String>> out = extractor.query(information.Body);
             String reply = "";
             for(Pair<String, String> x : out) {
-                System.out.println(x);
-                reply += x;
+                //System.out.println(x);
+                reply += x.second;
             }
-
-
+            System.out.println(reply);
+               String[] test = reply.split("\\.");
+            System.out.println(test.length);
+            System.out.println(test[0]);
+                //reply = "hello world";
             Body body = new Body
-                    .Builder(reply)
+                    .Builder(test[0])
                     .build();
             Message sms = new Message
                     .Builder()
