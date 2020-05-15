@@ -1,19 +1,39 @@
+package termExtractor;
 import java.util.*;
 
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 import edu.stanford.nlp.util.Pair;
-import redis.clients.jedis.Jedis;
+import java.sql.*;
 
 public class TermExtractor {
     private MaxentTagger tagger;
-    private Jedis redis;
+    private Connection conn;
+    private HashMap<String, String> dict;
     private FuzzyStringMatcher matcher;
     private int tolerance;
     
     public TermExtractor() {
         this.tagger = new MaxentTagger(Config.get("taggerPath"));
-        this.redis = new Jedis(Config.get("redisHost"), Integer.parseInt(Config.get("redisPort")));
-        this.matcher = new FuzzyStringMatcher(redis.keys("*"));
+        this.dict = new HashMap<String, String>();
+        Set<String> source = new HashSet<String>();
+        
+        try {
+        	Class.forName("com.mysql.cj.jdbc.Driver");
+    		String URI = String.format("jdbc:mysql://%s:3306/%s", Config.get("host"), Config.get("db"));
+    		this.conn = DriverManager.getConnection(URI, Config.get("user"), Config.get("passwd"));
+    		Statement stmt = conn.createStatement();
+    		ResultSet rs = stmt.executeQuery("select * from terms");
+    		while(rs.next()) {
+    			String term = rs.getString(1);
+    			String def = rs.getString(2);
+    			source.add(term);
+    			this.dict.put(term, def);
+    		}
+        } catch(Exception e) {
+        	System.out.println(e);
+        }
+        
+        this.matcher = new FuzzyStringMatcher(source);
         this.tolerance = Integer.parseInt(Config.get("maxAllowedEditDistance"));
     }
     
@@ -62,14 +82,13 @@ public class TermExtractor {
         Set<String> uniqueCand = new HashSet<String>(candidates);
         List<Pair<String, String>> ans = new ArrayList<Pair<String, String>>();
         for(String x : uniqueCand) {
-            String exactDef = this.redis.get(x);
-            if(exactDef != null) {
-                ans.add(new Pair<String, String>(x, exactDef));
-            }
+        	if(this.dict.containsKey(x)) {
+        		ans.add(new Pair<String, String>(x, this.dict.get(x)));
+        	}
             else {
                 List<String> res = this.matcher.query(x, this.tolerance);
                 for(String y : res) {
-                    String fuzzyDef = this.redis.get(y);
+                    String fuzzyDef = this.dict.get(y);
                     assert(fuzzyDef != null);
                     ans.add(new Pair<String, String>(y, fuzzyDef));
                 }

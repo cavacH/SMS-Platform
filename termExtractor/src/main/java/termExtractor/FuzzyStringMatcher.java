@@ -1,3 +1,4 @@
+package termExtractor;
 import java.util.*;
 
 public class FuzzyStringMatcher {

@@ -10,5 +10,3 @@ Host & port of external redis database containing a set of medical terms and def
 Maximum allowed edit distance while doing fuzzy matching(e.g "vyrus" and "virus" have an edit distance of 1)
 * maxSuggestedCandidates <br/>
 Select top-k candidates with minimum edit distances while doing fuzzy matching
-
-**To run the example code, remember to add the two jar files under "external" folder to classpath.**
