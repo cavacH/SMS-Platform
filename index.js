@@ -18,6 +18,101 @@ particlesJS.load('particles-js', 'assets/particles.json', function() {
 
 
 
+class WelcomePage_Tweaked extends React.Component{
+  render(){
+    return (
+<div className="container">
+<div>
+<br/>
+<div align = "center" className = "hundred_panel">
+  <div className="container-center">
+  <p>
+  <div className="topimage">
+<img src="assets/safinia_new_clean.png" className = " title-image" alt="Safinia"/>
+
+<h2 align="center">Clarifying Complex Medical Terminology.</h2>
+</div>
+</p>
+</div><br/>
+</div></div>
+</div>
+    );
+  }
+}
+
+class WelcomePage_Tweaked_Second extends React.Component{
+  render(){
+    return (<div>
+      <div className="tweaked_intro container-fluid replicate_background" align = "center">
+        
+        <h5 className = "eighty-width white">St. Louis has the highest rate of Sexually Transmitted Infections in the country.</h5>
+        <br/>
+        <br/>
+        <h5 className = "eighty-width white">Safinia is aiming to reduce the STI rate by introducing a SMS platform that can bridge key knowledge gaps in STI literacy. </h5>
+
+        <br/>
+        <button type="button" className="btn btn-outline-warning">Learn More</button>
+
+      </div>
+
+  </div>
+    );
+
+
+  }
+
+  componentDidMount(){
+    //callParticleJS()
+}
+
+
+}
+
+
+
+
+class WelcomePage_0 extends React.Component{
+
+
+
+  render(){
+  
+  return (
+<div className="row">
+<div className="col" align="center"></div>
+<div className="col" align="center"></div>
+
+<div className="replicate col" align="center">Contact:Andy</div>
+<div className="col" align="center"></div>
+<div className="col" align="center"></div>
+
+<div className="col" align="center"></div>
+<div className="col" align="center"></div>
+<div className="col" align="center">
+</div>
+<div className="col" align="center"></div><div className="col" align="center"><div  style={{textAlign: 'right'}}>
+      <a href="./register">Register</a>
+</div></div>
+
+  <div className="col" align="center">
+      <div>
+      <a href="./app">Login</a>
+      </div>
+    </div><div className="col" align="center"></div>
+    </div>
+  
+  );
+  
+  }
+  
+  componentDidMount(){
+      //callParticleJS()
+  }
+  
+  
+  
+  }
+
 /* Gives out the Welcome Page. */
 
 
@@ -132,9 +227,9 @@ class WelcomePage_2 extends React.Component{
     <div className="your-content">
     
     <br/><br/>
-    <h1 className="white-h1">Try Our Anonymous SMS Platform!</h1>
+    <h1 >Try Our Anonymous SMS Platform!</h1>
     <div align="center">
-    <h3 className="white-h1">COVID-19 and Related Searches:</h3>
+    <h3 >COVID-19 and Related Searches:</h3>
     <button type="button" className="btn-1 info mr-2 mr-2">Virus</button>
     <button type="button" className="btn-1 info mr-2 mr-2">Coronavirus</button>
     <button type="button" className="btn-1 info mr-2 mr-2">Vaccine</button>
@@ -142,7 +237,7 @@ class WelcomePage_2 extends React.Component{
     <button type="button" className="btn-1 info mr-2 mr-2">Lung</button>
     </div>
     <br/>
-    <h3 className="white-h1">Other Searches:</h3>
+    <h3 >Other Searches:</h3>
     <div align="center">
     <button type="button" className="btn-1 info mr-2 mr-2">Bacteria</button>
     <button type="button" className="btn-1 info mr-2 mr-2">Fever</button>
@@ -274,13 +369,6 @@ class WelcomePage_3 extends React.Component{
 A Welcome NavBar.
 DORE: NavBar Characteristics:
 Divided with li.
-*/
-
-class WelNavBar extends React.Component{
-    render(){
-    return  (
-<nav className="navbar bg-light">
-  <div className="container-fluid">
 
   <li>
     <div className="navbar-header">
@@ -290,31 +378,55 @@ class WelNavBar extends React.Component{
     </div>
     </li>
 
+*/
 
-    <li className="nav-item">
-    <a href="https://developers.google.com/community/dsc">
-    Learn More about DSC
-        </a>
-        </li>
-        <li className="nav-item">
-        <a href="https://5eab2d671027897e5485f8ab--silly-pare-495ace.netlify.app/">
-        Learn More about DSC @ WashU
-      </a>
-      </li>
+class WelNavBar extends React.Component{
+    render(){
+    return  (
+<nav className="navbar navbar-expand-sm bg-transparent navbar-custom">
 
-      <li>
-    <nav className="navbar navbar-expand-sm bg-light navbar-light">
-  <form className="form-inline" action="">
-    <input className="form-control mr-sm-2" type="text" placeholder="Search"/>
-    <button className="btn btn-success" type="submit">Search</button>
-  </form>
-</nav>
+
+<li>
+<div className="navbar-header"><h5>
+ Call: xxx-xxx-xxxx
+    </h5></div>
 </li>
 
+<ul className="navbar-nav ml-auto"> 
+    <li className="nav-item">
+    <a href="./about/">
+    About
+        </a>
+    </li>
+
+    <li className="nav-item">
+    <a href="./services/">
+    Services
+        </a>
+    </li>
+    
+    <li className="nav-item">
+        <a href="./contact_us/">
+        Contact us
+      </a>
+  </li>
+  <li className="nav-item">
+    <a href="./register/">
+    Register
+        </a>
+    </li>
+  <li className="nav-item">
+        <a href="./login/">
+        Login
+      </a>
+  </li>
+</ul>
 
 
 
-  </div>
+
+
+
 </nav>
   );
   }}
@@ -325,7 +437,7 @@ class WelNavBar extends React.Component{
         <div>
 
 
-  <div><WelcomePage_1/><WelcomePage_2/><WelcomePage_3/></div>
+  <div><WelcomePage_Tweaked/><br/><WelcomePage_Tweaked_Second/></div>
 
         </div>
       );

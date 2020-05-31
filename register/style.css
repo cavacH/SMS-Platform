@@ -64,8 +64,8 @@ body {
   background-color: #0b72bd; 
 }
 #particles-js {
-  /*position: absolute;*/
-  /*height: 100%;*/
+  position: absolute;
+  height: 100%;
   width: 100%;
   background-color: #0b72bd; /* could go on .outer-container as well */
 }
@@ -118,101 +118,3 @@ body {
 .replicate{
   color: #086bff;
 }
-
-.navbar-custom {
-  color: #000000;
-  background-color:transparent;
-}
-
-ul.nav li a, ul.nav li a:visited {
-  color: #000000 !important;
-  display: inline-block;
-}
-
-ul.nav li a:hover, ul.nav li a:active {
-  color: #000000 !important;
-  display: inline-block;
-}
-
-ul.nav li.active a {
-  color: #000000 !important;
-  display: inline-block;
-}
-
-.title-image{
-
-  height: auto;
-  width: auto;
-  min-height: 120px;
-  max-width: 900px;
-}
-
-nav li a{
-  color: black !important;
-}
-
-.hundred_screen{
-  height: 100%;
-  vertical-align:middle
-}
-
-.image_frontpage{
-  width:100%;
-  height: auto;
-  max-height: 100%;
-  max-width: 100%;
-  width: auto;
-  height: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-div.container-center {
-  top: 50%;
-  left: 50%;
-  position: absolute }
-div.container-center p {
-  margin: 0;
-  background: transparent;
-  position: absolute;
-  top: 50%;
-
-  margin-right: -50%;
-  transform: translate(-50%, -50%) 
-}
-
-.nav-item {
-  margin-right: 20px;
-}
-
-.hundred_panel{
-  height: 100vh;
-}
-
-.topimage{
-  display:table-cell; vertical-align:middle; text-align:center
-}
-
-.tweaked_intro {
-  padding-top: 50px;
-  padding-right: 30px;
-  padding-bottom: 50px;
-  padding-left: 80px;
-}
-
-.replicate_background{
-  background-image: url("assets/header_background_article_patterns_v2_3.jpg");
-  width: 100%;
-
-}
-
-
-
-.white{
-  color: white;
-}
-
